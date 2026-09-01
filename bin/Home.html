@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praias do ES — Condições ambientais e balneabilidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./Index.css">
+</head>
+<body>
+   <header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="./MAR.mp4" type="video/mp4">
+  </video>
+  <div class="hero-inner">
+    <p class="kicker">Espírito Santo — dados públicos reunidos</p>
+    <h1>A sua praia está própria para banho hoje?</h1>
+    <p>Reunimos balneabilidade, esgoto e resíduos sólidos das praias capixabas em uma linguagem simples, para você decidir antes de entrar na água.</p>
+    <div class="stat-row">
+      <div class="stat" ><div class="num" id="stat-propria">6 <small>/ 12</small></div><div class="label">Próprias</div></div>
+      <div class="stat" ><div class="num" id="stat-atencao">4 <small>/ 12</small></div><div class="label">Em atenção</div></div>
+      <div class="stat" ><div class="num" id="stat-impropria">2 <small>/ 12</small></div><div class="label">Impróprias</div></div>
+    </div>
+  </div>
+</header>
+<div class="controls">
+  <div class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="search-input" type="text" placeholder="Buscar praia ou município">
+  </div>
+ 
+  <div class="filter-group" id="status-filters">
+    <button class="chip" data-status="all" aria-pressed="true">Todas</button>
+    <button class="chip" data-status="propria" aria-pressed="false">Próprias</button>
+    <button class="chip" data-status="atencao" aria-pressed="false">Atenção</button>
+    <button class="chip" data-status="impropria" aria-pressed="false">Impróprias</button>
+  </div>
+ 
+  <div class="filter-group" id="city-filters">
+    <button class="chip" data-city="all" aria-pressed="true">Todos os municípios</button>
+  </div>
+</div>
+ 
+<main>
+  <p class="count" id="result-count">12 praias encontradas</p>
+  <div class="beach-list" id="beach-list"></div>
+  <p class="empty" id="empty-state">Nenhuma praia encontrada com esses filtros.</p>
+</main>
+ 
+<section class="legend">
+  <h2>Como entender os indicadores</h2>
+  <p>A classificação segue a Resolução CONAMA 274/2000, que usa a concentração de coliformes termotolerantes na água como principal parâmetro de balneabilidade.</p>
+  <div class="legend-cards">
+    <div class="legend-card" Style="--status-color:#3E8F6C"> 
+      <div class="name">Própria para banho</div>
+      <p>Até 250 NMP/100mL em coletas consecutivas. Risco baixo de doenças de contato.</p>
+    </div>
+    <div class="legend-card" Style="--status-color:#B9812C">
+      <div class="name">Atenção</div>
+      <p>Resultados oscilando ou coleta antiga. Evite o banho após chuvas fortes.</p>
+    </div>
+    <div class="legend-card" Style="--status-color:#B5473A">
+      <div class="name">Imprópria para banho</div>
+      <p>Acima do limite legal. Contato com a água pode causar infecções gastrointestinais e de pele.</p>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <p>Dados de demonstração baseados no formato dos boletins públicos de balneabilidade do IEMA-ES e de órgãos municipais de meio ambiente.</p>
+  <p>Última atualização da base: 16/08/2026.</p>
+</footer>
+</body>
+</html>
